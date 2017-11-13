@@ -4,13 +4,20 @@
       <h1>iHome</h1>
     </header>
 
-    {{> buttons}}
+    <ul>
+    <li> {{> buttonToggle}} </li>
+    <li> {{> buttonToggle}} </li>
+    <li> {{> buttonToggle}} </li>
+    <li> {{> buttonToggle}} </li>
+    <li> {{> buttonToggle}} </li>
+    <li> {{> buttonToggle}} </li>
+    </ul>
 
   </div>
 </body>
  
-<template name="buttons">
-   <button> light is {{get}} </button>
+<template name="buttonToggle">
+   <button> {{get}} </button>
 </template>
 
 <template name="task">
