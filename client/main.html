@@ -8,7 +8,7 @@
     <li> 
         {{> device deviceName="Living Room Lights"}}
     </li>
-    <li> {{> device deviceName="Oven"}} </li>
+    <li> {{> device deviceName="Oven"}} {{>slider}} </li>
     <li> {{> buttonToggle}} </li>
     <li> {{> buttonToggle}} </li>
     <li> {{> buttonToggle}} </li>
@@ -21,6 +21,11 @@
 <template name="device">
     <h1> {{deviceName}} </h1>
     {{> buttonToggle}}
+</template>
+
+<template name="slider">
+    <input type="range"  min="0" max="100" value="0"/>
+    Level: {{get}}
 </template>
 
 <template name="buttonToggle">

@@ -2,13 +2,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
- 
-Template.body.helpers({
-  tasks: [
-    { text: 'This is task 1' },
-  ],
-});
 
+/* Event handlers for the buttonToggle template
+ */
 Template.buttonToggle.onCreated(function create() {
     this.on = new ReactiveVar(0);
 });
@@ -26,3 +22,22 @@ Template.buttonToggle.events({
         else instance.on.set(0);
     }
 });
+
+/* Event handlers for the slider template
+ */
+Template.slider.onCreated(function create() {
+    this.level = new ReactiveVar(0);
+});
+
+Template.slider.helpers({
+    get() {
+        return Template.instance().level.get();
+    }
+});
+
+Template.slider.events({
+    'change input[type=range]': function(event, instance){
+        var sliderValue = event.currentTarget.value;
+        instance.level.set(sliderValue);
+    }
+})
