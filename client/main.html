@@ -5,8 +5,10 @@
     </header>
 
     <ul>
-    <li> {{> buttonToggle}} </li>
-    <li> {{> buttonToggle}} </li>
+    <li> 
+        {{> device deviceName="Living Room Lights"}}
+    </li>
+    <li> {{> device deviceName="Oven"}} </li>
     <li> {{> buttonToggle}} </li>
     <li> {{> buttonToggle}} </li>
     <li> {{> buttonToggle}} </li>
@@ -15,7 +17,12 @@
 
   </div>
 </body>
- 
+
+<template name="device">
+    <h1> {{deviceName}} </h1>
+    {{> buttonToggle}}
+</template>
+
 <template name="buttonToggle">
    <button> {{get}} </button>
 </template>
