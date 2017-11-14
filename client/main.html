@@ -6,9 +6,13 @@
 
     <ul>
     <li> 
-        {{> device deviceName="Living Room Lights"}}
+        <div style="float: left;">
+            <h1> Living Room Lights </h1>
+        </div>
+        <div style="float: right">
+            {{> buttonToggle}}
+        </div>
     </li>
-    <li> {{> device deviceName="Oven"}} {{>slider}} </li>
     <li> 
         <div style="float: left;">
             <h1> Bedroom Lights </h1>
@@ -18,9 +22,14 @@
             {{> slider}}
         </div>
     </li>
-    <li> {{> buttonToggle}} </li>
-    <li> {{> buttonToggle}} </li>
-    <li> {{> buttonToggle}} </li>
+    <li> 
+        <div style="float: left;">
+            <h1> Oven </h1>
+        </div>
+        <div style="float: right;">
+            {{> buttonToggle}}
+        </div>
+    </li>
     </ul>
 
   </div>
@@ -36,7 +45,7 @@
 </template>
 
 <template name="buttonToggle">
-   <button> {{get}} </button>
+   <button style="height:20px; width:40px; margin:10px;"> {{get}} </button>
 </template>
 
 <template name="task">
