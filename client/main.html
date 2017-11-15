@@ -6,48 +6,66 @@
 
     <ul>
     <li> 
-        <div style="float: left;">
-            <h1> Living Room Lights </h1>
-        </div>
-        <div style="float: right">
-            {{> buttonToggle}}
-        </div>
-    </li>
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h1> Porch Light </h1>
+                </td>
+                <td>
+                    {{> buttonToggle}}
+                </td>
+            </tr>
+        </table>
+    </li> 
     <li> 
-        <div style="float: left;">
-            <h1> Bedroom Lights </h1>
-        </div>
-        <div style="float: right;">
-            {{> buttonToggle}}
-            {{> slider}}
-        </div>
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h1> Bedroom Lights </h1>
+                </td>
+                <td>
+                    {{> buttonToggle}}
+                </td>
+                <td>
+                    {{> slider}}
+                </td>
+            </tr>
+        </table>
     </li>
-    <li> 
-        <div style="float: left;">
-            <h1> Oven </h1>
-        </div>
-        <div style="float: right;">
-            {{> buttonToggle}}
-        </div>
+    <li>
+        <table style="width:100%;">
+            <tr> 
+                <td> <h1> Oven </h1> </td>
+                <td> {{> buttonToggle}} </td>
+            </tr>
+        </table>
+    </li>
+    <li>
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h1> Coffee Maker </h1>
+                </td>
+                <td> {{>buttonToggle}} </td>
+                <td>
+                    <select>
+                        <option> Espresso </option>
+                        <option> Coldbrew </option>
+                        <option> Regular </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
     </li>
     </ul>
 
   </div>
 </body>
 
-<template name="device">
-    <h1 style> {{deviceName}} </h1>
-    {{> buttonToggle}}
-</template>
-
 <template name="slider">
-    <input type="range"  min="0" max="100" value="0"/> {{get}}%
+    <input type="range"  min="0" max="100" value="0" class="slider" id="myRange"/> {{get}}%
 </template>
 
 <template name="buttonToggle">
-   <button style="height:20px; width:40px; margin:10px;"> {{get}} </button>
-</template>
-
-<template name="task">
-  <li>{{text}}</li>
+   <button style="height:40px; width:40px; margin:10px;"> {{get}} </button>
 </template>
